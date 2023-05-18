@@ -42,7 +42,7 @@ test("call hello from the provisioned cell and clone it", async () => {
     console.log("APP INFO: ", JSON.stringify(appInfo));
 
     hello = await alice.conductor.appAgentWs().callZome({
-      cell_id: cellInfo.cell_id,
+      role_name: cellInfo.clone_id,
       zome_name: "posts",
       fn_name: "hello",
       payload: null,
@@ -92,7 +92,7 @@ test("call hello from the provisioned cell, clone it, and call hello again", asy
     console.log("APP INFO: ", JSON.stringify(appInfo));
 
     hello = await alice.conductor.appAgentWs().callZome({
-      cell_id: cellInfo.cell_id,
+      role_name: cellInfo.clone_id,
       zome_name: "posts",
       fn_name: "hello",
       payload: null,

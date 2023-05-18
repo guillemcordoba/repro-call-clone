@@ -47,6 +47,7 @@ test("call hello from the provisioned cell and clone it", async () => {
       fn_name: "hello",
       payload: null,
     });
+    console.log("RESULT", hello);
     assert.equal(hello, "hello");
   });
 });
@@ -96,6 +97,9 @@ test("call hello from the provisioned cell, clone it, and call hello again", asy
       fn_name: "hello",
       payload: null,
     });
+
+    console.log("RESULT", hello);
+
     assert.equal(hello, "hello");
   });
 });

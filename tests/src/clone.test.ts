@@ -45,6 +45,12 @@ test("call hello from the provisioned cell, clone it, and call hello again", asy
       role_name: "forum",
     });
 
+    console.log("CELL INFO: ", JSON.stringify(cellInfo));
+
+    const appInfo = await alice.conductor.appAgentWs().appInfo();
+
+    console.log("APP INFO: ", JSON.stringify(appInfo));
+
     hello = await alice.conductor.appAgentWs().callZome({
       cell_id: cellInfo.cell_id,
       zome_name: "posts",
